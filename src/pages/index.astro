@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import "normalize.css";
+import "../styles/global.css";
+
+const linksEntries = await getCollection("links");
+const links = linksEntries
+  .map((entry) => entry.data)
+  .sort((a, b) => a.order - b.order);
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hub.takeno.tech</title>
+  </head>
+  <body>
+    <h2>🚧</h2>
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <span class="color-badge" style={`color: ${link.themeColor};`}>
+              ■
+            </span>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>
