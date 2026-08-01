@@ -15,18 +15,27 @@ const links = linksEntries
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hub.takeno.tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h2>🚧</h2>
-    <ul>
+    <ul class="link-list">
       {
         links.map((link) => (
-          <li>
-            <span class="color-badge" style={`color: ${link.themeColor};`}>
-              ■
-            </span>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.title}
+          <li class="link-item">
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-button"
+              style={`--theme-color: ${link.themeColor};`}
+            >
+              <span class="theme-dot" />
+              <span class="link-title">{link.title}</span>
             </a>
           </li>
         ))
