@@ -3,10 +3,35 @@ import { getCollection } from "astro:content";
 import "normalize.css";
 import "../styles/global.css";
 
+type LinkData = {
+  id?: string;
+  group?: number;
+  order: number;
+  title: string;
+  url: string;
+  themeColor: string;
+  icon?: string;
+};
+
+// order 順で全リンクを取得
 const linksEntries = await getCollection("links");
-const links = linksEntries
-  .map((entry) => entry.data)
+const links: LinkData[] = linksEntries
+  .map((entry) => entry.data as LinkData)
   .sort((a, b) => a.order - b.order);
+
+// group 番号でまとめ、グループ番号の昇順で並べる
+const groupMap = new Map<number | string, LinkData[]>();
+for (const link of links) {
+  const key = link.group ?? "default";
+  if (!groupMap.has(key)) groupMap.set(key, []);
+  groupMap.get(key)!.push(link);
+}
+// グループを昇順ソート（数値グループを先に、"default" を後に）
+const groups = [...groupMap.entries()].sort(([a], [b]) => {
+  if (a === "default") return 1;
+  if (b === "default") return -1;
+  return Number(a) - Number(b);
+});
 ---
 
 <!doctype html>
@@ -23,23 +48,25 @@ const links = linksEntries
     />
   </head>
   <body>
-    <ul class="link-list">
+    <div class="groups-container">
       {
-        links.map((link) => (
-          <li class="link-item">
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-button"
-              style={`--theme-color: ${link.themeColor};`}
-            >
-              <span class="theme-dot" />
-              <span class="link-title">{link.title}</span>
-            </a>
-          </li>
+        groups.map(([groupKey, groupLinks]) => (
+          <div class="link-group">
+            {groupLinks.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-button"
+                style={`--theme-color: ${link.themeColor};`}
+              >
+                <span class="theme-dot" />
+                <span class="link-title">{link.title}</span>
+              </a>
+            ))}
+          </div>
         ))
       }
-    </ul>
+    </div>
   </body>
 </html>

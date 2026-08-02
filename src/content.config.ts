@@ -5,6 +5,7 @@ const linksCollection = defineCollection({
   loader: file('src/content/links.yaml'),
   schema: z.object({
     id: z.string().optional(),
+    group: z.number().optional(),
     order: z.number().default(0),
     title: z.string(),
     url: z.string().url(),

@@ -6,7 +6,7 @@
   themeColor: "#99A8FF"
 
 - id: lab
-  group: 1
+  group: 2
   order: 2
   title: lab-site
   url: https://lab.takeno.tech

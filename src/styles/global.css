@@ -3,6 +3,7 @@
   --text-color: #e5e6ed;
   --button-bg: #14161C;
   --button-hover-bg: #1C1E26;
+  --group-gap: 1.0rem;
 }
 
 body {
@@ -20,18 +21,19 @@ body {
   box-sizing: border-box;
 }
 
-.link-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* グループ全体のコンテナ */
+.groups-container {
   width: 100%;
   max-width: 360px;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: var(--group-gap);
 }
 
-.link-item {
+/* 同じグループのボタンをまとめるラッパー */
+.link-group {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -48,6 +50,7 @@ body {
   font-weight: 400;
   font-size: 0.95rem;
   box-sizing: border-box;
+  transition: background 0.2s ease;
 }
 
 .link-button:hover {
@@ -56,10 +59,12 @@ body {
 
 /* 控えめで繊細なテーマカラードット */
 .theme-dot {
-  content: "#";
   width: 7px;
   height: 7px;
+  border-radius: 50%;
   background-color: var(--theme-color);
+  flex-shrink: 0;
+  opacity: 0.9;
 }
 
 .link-title {
