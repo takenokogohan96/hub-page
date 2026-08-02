@@ -57,14 +57,14 @@ body {
   background: var(--button-hover-bg);
 }
 
-/* 控えめで繊細なテーマカラードット */
-.theme-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--theme-color);
+/* アイコン */
+.link-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--theme-color);
   flex-shrink: 0;
-  opacity: 0.9;
+  user-select: none;
+  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
 
 .link-title {

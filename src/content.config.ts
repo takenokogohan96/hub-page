@@ -10,7 +10,7 @@ const linksCollection = defineCollection({
     title: z.string(),
     url: z.string().url(),
     themeColor: z.string().default('#000000'),
-    icon: z.string().optional(),
+    'icon-name': z.string().optional(),
   }),
 });
 

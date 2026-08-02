@@ -4,6 +4,7 @@
   title: takeno.tech
   url: https://takeno.tech
   themeColor: "#99A8FF"
+  icon-name: home
 
 - id: lab
   group: 2
@@ -11,6 +12,7 @@
   title: lab-site
   url: https://lab.takeno.tech
   themeColor: "#99A8FF"
+  icon-name: experiment
 
 - id: zenn
   group: 2
@@ -18,6 +20,7 @@
   title: Zenn
   url: https://zenn.dev/takenokogohan96
   themeColor: "#3ea8ff"
+  icon-name: article
 
 - id: github
   group: 2
@@ -25,6 +28,7 @@
   title: Github
   url: https://github.com/takenokogohan96
   themeColor: "#FFFFFF"
+  icon-name: database
 
 - id: misskey
   group: 3
@@ -32,6 +36,7 @@
   title: misskey.io
   url: https://misskey.io/@takenokogohan96
   themeColor: "#91c948"
+  icon-name: language
 
 - id: live-theater
   group: 3
@@ -39,6 +44,7 @@
   title: live-theater.net
   url: https://live-theater.net/@takenokogohan96
   themeColor: "#fec10a"
+  icon-name: language
 
 - id: youtube
   group: 4
@@ -46,3 +52,4 @@
   title: Youtube
   url: https://www.youtube.com/c/takenokogohan96page
   themeColor: "#fd0133"
+  icon-name: play_circle
