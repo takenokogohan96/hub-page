@@ -36,7 +36,7 @@
   title: misskey.io
   url: https://misskey.io/@takenokogohan96
   themeColor: "#91c948"
-  icon-name: language
+  icon-name: comment
 
 - id: live-theater
   group: 3
@@ -44,10 +44,10 @@
   title: live-theater.net
   url: https://live-theater.net/@takenokogohan96
   themeColor: "#fec10a"
-  icon-name: language
+  icon-name: comment
 
 - id: youtube
-  group: 4
+  group: 3
   order: 7
   title: Youtube
   url: https://www.youtube.com/c/takenokogohan96page

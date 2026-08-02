@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #101115;
+  --bg-color: radial-gradient(#101115, #000000);
   --text-color: #e5e6ed;
   --button-bg: #14161C;
   --button-hover-bg: #1C1E26;
